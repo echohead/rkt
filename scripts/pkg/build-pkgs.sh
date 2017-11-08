@@ -54,17 +54,17 @@ for flavor in fly coreos kvm; do
 done
 
 ## manpages & doc
-for f in $projectdir/dist/manpages/*; do 
-    install -Dm644 -t $prefix/usr/share/man/man1 "${f}" 
-done
+#for f in $projectdir/dist/manpages/*; do 
+#    install -Dm644 -t $prefix/usr/share/man/man1 "${f}" 
+#done
 
-for dir in . subcommands networking performance; do
-    for f in $projectdir/Documentation/$dir/*.*; do
-        install -Dm644 -t $prefix/usr/share/doc/rkt "${f}"
-    done
-done
+#for dir in . subcommands networking performance; do
+#    for f in $projectdir/Documentation/$dir/*.*; do
+#        install -Dm644 -t $prefix/usr/share/doc/rkt "${f}"
+#    done
+#done
 
-install -Dm644 $projectdir/dist/bash_completion/rkt.bash $prefix/usr/share/bash-completion/completions/rkt
+#install -Dm644 $projectdir/dist/bash_completion/rkt.bash $prefix/usr/share/bash-completion/completions/rkt
 install -Dm644 $projectdir/dist/init/systemd/tmpfiles.d/rkt.conf $prefix/usr/lib/tmpfiles.d/rkt.conf
 
 for unit in rkt-gc.{timer,service} rkt-metadata.{socket,service} rkt-api{.service,-tcp.socket}; do
