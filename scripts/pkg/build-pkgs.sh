@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-## build .deb and .rpm packages from an already-built
+## build .deb package from an already-built
 ## version of rkt
 
 set -e
@@ -93,18 +93,6 @@ fpm -s dir -t deb \
     -d systemd \
     -d iptables \
     --deb-suggests ca-certificates \
-    -C ${prefix} 
-
-fpm -s dir -t rpm \
-    -n "rkt" -v "$version" --iteration "$ITERATION" \
-    --after-install $workdir/after-install \
-    --before-install $workdir/before-install \
-	--after-remove $workdir/after-remove \
-	--before-remove $workdir/before-remove \
-	--after-upgrade $workdir/after-install \
-    --license "$LICENSE" --vendor "$VENDOR" --url "$HOMEPAGE" -m "$MAINTAINER" --category utils \
-    --provides rkt \
-    -d 'shadow-utils' \
     -C ${prefix} 
 
 rm -rf $workdir
