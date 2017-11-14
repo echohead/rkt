@@ -4,4 +4,3 @@ else
     # is a mountpoint, so just delete contents
     rm -rf /var/lib/rkt/*
 fi
-systemctl daemon-reload || true

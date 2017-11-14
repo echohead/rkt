@@ -65,11 +65,11 @@ done
 #done
 
 #install -Dm644 $projectdir/dist/bash_completion/rkt.bash $prefix/usr/share/bash-completion/completions/rkt
-install -Dm644 $projectdir/dist/init/systemd/tmpfiles.d/rkt.conf $prefix/usr/lib/tmpfiles.d/rkt.conf
+#install -Dm644 $projectdir/dist/init/systemd/tmpfiles.d/rkt.conf $prefix/usr/lib/tmpfiles.d/rkt.conf
 
-for unit in rkt-gc.{timer,service} rkt-metadata.{socket,service} rkt-api{.service,-tcp.socket}; do
-    install -Dm644 -t $prefix/usr/lib/systemd/system/  $projectdir/dist/init/systemd/${unit}
-done
+#for unit in rkt-gc.{timer,service} rkt-metadata.{socket,service} rkt-api{.service,-tcp.socket}; do
+#    install -Dm644 -t $prefix/usr/lib/systemd/system/  $projectdir/dist/init/systemd/${unit}
+#done
 
 ## Copy before and after-install
 cp $srcdir/*-{install,remove} $workdir/
@@ -88,10 +88,9 @@ fpm -s dir -t deb \
 	--after-upgrade $workdir/after-install \
     --license "$LICENSE" --vendor "$VENDOR" --url "$HOMEPAGE" -m "$MAINTAINER" --category utils \
     -d adduser \
-    -d dbus \
     -d libc6 \
-    -d systemd \
     -d iptables \
+    -d cgroup-bin \
     --deb-suggests ca-certificates \
     -C ${prefix} 
 
