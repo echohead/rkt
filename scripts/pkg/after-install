@@ -1,2 +1,2 @@
-rkt --insecure-options=image fetch /usr/lib/rkt/stage1-images/stage1-coreos.aci
+ln -s /usr/lib/rkt/stage1-images/stage1-coreos.aci /usr/bin/stage1-coreos.aci
 
