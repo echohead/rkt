@@ -4,3 +4,5 @@ else
     # is a mountpoint, so just delete contents
     rm -rf /var/lib/rkt/*
 fi
+
+rm -f /usr/bin/stage1-coreos.aci

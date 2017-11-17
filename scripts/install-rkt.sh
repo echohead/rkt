@@ -4,7 +4,7 @@ set -x
 
 cd $(mktemp -d)
 
-version="1.29.1"
+version="1.29.2"
 
 export DEBIAN_FRONTEND=noninteractive
 

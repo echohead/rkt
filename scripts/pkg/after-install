@@ -1,2 +1,2 @@
-ln -s /usr/lib/rkt/stage1-images/stage1-coreos.aci /usr/bin/stage1-coreos.aci
+ln -sf /usr/lib/rkt/stage1-images/stage1-coreos.aci /usr/bin/stage1-coreos.aci
 
