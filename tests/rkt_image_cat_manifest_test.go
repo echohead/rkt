@@ -47,7 +47,7 @@ func TestImageCatManifest(t *testing.T) {
 			},
 		},
 		Labels: types.Labels{
-			{"version", "1.29.0"},
+			{"version", "1.29.1"},
 			{"arch", common.GetArch()},
 			{"os", common.GetOS()},
 		},
